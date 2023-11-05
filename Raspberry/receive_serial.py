@@ -8,6 +8,9 @@ import time
 from logger.logger import Logger
 from database.database import Database
 
+# Lokale Module
+from data_handle import write_data
+
 sensor_data_db = Database("sensor_data")
 logger = Logger("Serial")
 
@@ -31,14 +34,20 @@ def send_to_db(data: list) -> None:
 def main() -> None:
     logger.log("Starte serielle Schnittstelle")
     # Serielle Schnittstelle öffnen
-    ser = serial.Serial('COM1', 1200, timeout=1)
+
+    ser = serial.Serial(port="COM4", baudrate=9600, timeout=1)
     ser.flush()
     
     # Daten empfangen und bei Empfang an weitergeben
     while True:
         if ser.in_waiting > 0:
             line = ser.readline().decode('utf-8').rstrip()
-            logger.log("Received: " + line)
-            data = line.split(",")
-            send_to_db(data)   
+            if line == "Starte System...":
+                logger.log("Verbindung hergestellt")
+            else:
+                logger.log("Received: " + line)
+                data = line.split(",")
+                write_data(data)   
 
+if __name__ == "__main__":
+    main()

@@ -1,1 +1,520 @@
-{}
+{
+    "1699214521.1569037": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214521.1569037
+    },
+    "1699214523.1821728": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214523.1821728
+    },
+    "1699214525.2065861": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "159.00",
+        "timestamp": 1699214525.2065861
+    },
+    "1699214527.2314038": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214527.2314038
+    },
+    "1699214529.2586076": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214529.2586076
+    },
+    "1699214531.2817504": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214531.2817504
+    },
+    "1699214533.3059983": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214533.3059983
+    },
+    "1699214535.3312628": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214535.3312628
+    },
+    "1699214537.357053": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "161.00",
+        "timestamp": 1699214537.357053
+    },
+    "1699214539.3809874": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214539.3809874
+    },
+    "1699214541.4051669": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214541.4051669
+    },
+    "1699214543.430207": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214543.430207
+    },
+    "1699214545.454397": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214545.454397
+    },
+    "1699214547.4798317": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214547.4798317
+    },
+    "1699214549.504652": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214549.504652
+    },
+    "1699214551.5305066": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "161.00",
+        "timestamp": 1699214551.5305066
+    },
+    "1699214553.5540698": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214553.5540698
+    },
+    "1699214555.578698": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214555.578698
+    },
+    "1699214557.6035666": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214557.6035666
+    },
+    "1699214559.6289299": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214559.6289299
+    },
+    "1699214561.6535797": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214561.6535797
+    },
+    "1699214563.6784697": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.60",
+        "ground_temperature": "19.60",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214563.6784697
+    },
+    "1699214565.703265": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": "160.00",
+        "timestamp": 1699214565.703265
+    },
+    "1699214586.160634": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214586.160634
+    },
+    "1699214588.1851375": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214588.1851375
+    },
+    "1699214590.2097833": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214590.2097833
+    },
+    "1699214592.2352288": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214592.2352288
+    },
+    "1699214594.2600698": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214594.2600698
+    },
+    "1699214596.2851603": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214596.2851603
+    },
+    "1699214598.3094249": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214598.3094249
+    },
+    "1699214600.3346775": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214600.3346775
+    },
+    "1699214602.3587022": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214602.3587022
+    },
+    "1699214604.3836794": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214604.3836794
+    },
+    "1699214606.4096014": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214606.4096014
+    },
+    "1699214608.4336636": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214608.4336636
+    },
+    "1699214610.458702": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214610.458702
+    },
+    "1699214612.4837654": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214612.4837654
+    },
+    "1699214614.508379": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214614.508379
+    },
+    "1699214616.5324376": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214616.5324376
+    },
+    "1699214618.558068": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214618.558068
+    },
+    "1699214620.5827403": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214620.5827403
+    },
+    "1699214622.607044": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214622.607044
+    },
+    "1699214624.6324084": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214624.6324084
+    },
+    "1699214626.6570044": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214626.6570044
+    },
+    "1699214628.6818202": {
+        "air_humidity": "76.30",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214628.6818202
+    },
+    "1699214630.7070372": {
+        "air_humidity": "76.30",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214630.7070372
+    },
+    "1699214632.73009": {
+        "air_humidity": "76.30",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214632.73009
+    },
+    "1699214634.7568805": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214634.7568805
+    },
+    "1699214636.781524": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214636.781524
+    },
+    "1699214638.8066494": {
+        "air_humidity": "76.30",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214638.8066494
+    },
+    "1699214640.8309515": {
+        "air_humidity": "76.30",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214640.8309515
+    },
+    "1699214642.8555415": {
+        "air_humidity": "76.40",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214642.8555415
+    },
+    "1699214644.8810644": {
+        "air_humidity": "76.40",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214644.8810644
+    },
+    "1699214646.9027023": {
+        "air_humidity": "76.40",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214646.9027023
+    },
+    "1699214648.931076": {
+        "air_humidity": "76.40",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214648.931076
+    },
+    "1699214650.9555888": {
+        "air_humidity": "76.40",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214650.9555888
+    },
+    "1699214652.9808757": {
+        "air_humidity": "76.40",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214652.9808757
+    },
+    "1699214655.0047035": {
+        "air_humidity": "76.30",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214655.0047035
+    },
+    "1699214657.0297763": {
+        "air_humidity": "76.30",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214657.0297763
+    },
+    "1699214659.0545914": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214659.0545914
+    },
+    "1699214661.0794432": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214661.0794432
+    },
+    "1699214663.1042857": {
+        "air_humidity": "76.20",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214663.1042857
+    },
+    "1699214665.1296895": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214665.1296895
+    },
+    "1699214667.1545467": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214667.1545467
+    },
+    "1699214669.179098": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214669.179098
+    },
+    "1699214671.2038374": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214671.2038374
+    },
+    "1699214673.2289": {
+        "air_humidity": "76.10",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214673.2289
+    },
+    "1699214675.2537491": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214675.2537491
+    },
+    "1699214677.2782738": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214677.2782738
+    },
+    "1699214679.3031135": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214679.3031135
+    },
+    "1699214681.3285098": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214681.3285098
+    },
+    "1699214683.352591": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214683.352591
+    },
+    "1699214685.3778663": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214685.3778663
+    },
+    "1699214687.4022648": {
+        "air_humidity": "76.00",
+        "air_temperature": "20.50",
+        "ground_temperature": "19.50",
+        "ground_humidity": 15.0,
+        "timestamp": 1699214687.4022648
+    }
+}
