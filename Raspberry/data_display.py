@@ -17,39 +17,49 @@ class DataDisplay:
         self.root.title("Datenanzeige")
         #self.root.attributes("-fullscreen", True)
         
+        # Schriftart und -größe für alle Widgets
+        self.style = ttk.Style()
+        self.style.configure(".", font=("Arial", 20))
+        
+        # Style für die Labels
+        
         self.create_widgets()
         self.update_data()
         self.root.mainloop()
+        
         
     def create_widgets(self) -> None:
         self.current_data_frame = ttk.Frame(self.root)
         self.current_data_frame.grid(row=0, column=0)
         
-        self.graph_frame = ttk.Frame(self.root)
-        self.graph_frame.grid(row=0, column=1)
+        self.temperature_frame = ttk.Frame(self.root)
+        self.temperature_frame.grid(row=0, column=1)
+        
+        self.humidity_frame = ttk.Frame(self.root)
+        self.humidity_frame.grid(row=0, column=2)
 
-        self.air_temperature_label = ttk.Label(self.current_data_frame, text="Lufttemperatur: ")
+        self.air_temperature_label = ttk.Label(self.temperature_frame, text="Lufttemperatur: ")
         self.air_temperature_label.grid(row=0, column=0)
         
-        self.air_temperature_data_label = ttk.Label(self.current_data_frame, text="0°C")
+        self.air_temperature_data_label = ttk.Label(self.temperature_frame, text="0°C")
         self.air_temperature_data_label.grid(row=0, column=1)
         
-        self.air_humidity_label = ttk.Label(self.current_data_frame, text="Luftfeuchtigkeit: ")
+        self.air_humidity_label = ttk.Label(self.humidity_frame, text="Luftfeuchtigkeit: ")
         self.air_humidity_label.grid(row=1, column=0)
         
-        self.air_humidity_data_label = ttk.Label(self.current_data_frame, text="0%")
+        self.air_humidity_data_label = ttk.Label(self.humidity_frame, text="0%")
         self.air_humidity_data_label.grid(row=1, column=1)
         
-        self.ground_temperature_label = ttk.Label(self.current_data_frame, text="Bodentemperatur: ")
+        self.ground_temperature_label = ttk.Label(self.temperature_frame, text="Bodentemperatur: ")
         self.ground_temperature_label.grid(row=3, column=0)
         
-        self.ground_temperature_data_label = ttk.Label(self.current_data_frame, text="0°C")
+        self.ground_temperature_data_label = ttk.Label(self.temperature_frame, text="0°C")
         self.ground_temperature_data_label.grid(row=3, column=1)
         
-        self.ground_humidity_label = ttk.Label(self.current_data_frame, text="Bodenfeuchtigkeit: ")
+        self.ground_humidity_label = ttk.Label(self.humidity_frame, text="Bodenfeuchtigkeit: ")
         self.ground_humidity_label.grid(row=4, column=0)
         
-        self.ground_humidity_data_label = ttk.Label(self.current_data_frame, text="0%")
+        self.ground_humidity_data_label = ttk.Label(self.humidity_frame, text="0%")
         self.ground_humidity_data_label.grid(row=4, column=1)
         
     
