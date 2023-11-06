@@ -1,5 +1,6 @@
 from database.database import Database
 from time import time
+import diagram_handle
 db = Database("sensor_data")
 
 def get_latest_data() -> dict:
@@ -60,3 +61,5 @@ def write_data(data: list) -> None:
     
     db.set_value(timestamp, db_data)
     
+def build_diagram() -> None:
+    diagram_handle.DiagramHandle()

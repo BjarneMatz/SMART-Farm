@@ -108,6 +108,21 @@ class DataDisplay:
         logger.log("Aktualisiere Daten")
         data = dict(dh.get_latest_data())
         
+        # Diagramm neu erstellen
+        diagram = dh.build_diagram()
+        
+        # Bild laden und anpassen
+        diagram_image = Image.open(os.path.join(PATH, "Raspberry", "diagram.png"))
+        
+        original_width, original_height = diagram_image.size
+        
+        # Bild auf die Größe des Displays anpassen, ohne das Seitenverhältnis zu verändern
+        resized_image = diagram_image.resize((int(original_width * 0.9), int(original_height * 0.9)))
+        self.diagram_image = ImageTk.PhotoImage(resized_image)
+        
+        # Bild anzeigen
+        self.diagram_image_label.config(image=self.diagram_image)
+        
         self.air_temperature_data_label.config(text=str(data["air_temperature"]) + "°C")
         self.air_humidity_data_label.config(text=str(data["air_humidity"]) + "%")
         self.ground_temperature_data_label.config(text=str(data["ground_temperature"]) + "°C")
