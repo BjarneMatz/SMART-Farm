@@ -17,6 +17,24 @@ def get_latest_data() -> dict:
         }
         return data
 
+def get_all_data() -> dict:
+    keys = db.get_keys()
+    
+    timestamps = []
+    air_temperatures = []
+    air_humidities = []
+    ground_temperatures = []
+    ground_humidities = []
+    
+    for key in keys:
+        air_temperatures.append(db.get_value(key)["air_temperature"])
+        air_humidities.append(db.get_value(key)["air_humidity"])
+        ground_temperatures.append(db.get_value(key)["ground_temperature"])
+        ground_humidities.append(db.get_value(key)["ground_humidity"])
+        timestamps.append(db.get_value(key)["timestamp"])
+        
+    return air_temperatures, air_humidities, ground_temperatures, ground_humidities, timestamps
+
 def get_latest_entry_key():
     data = dict(db.get_raw())
     latest_entry = data.keys()
