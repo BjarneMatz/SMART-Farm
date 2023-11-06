@@ -23,18 +23,6 @@ class DiagramHandle:
         # Daten aus der Datenbank holen
         temperature, air_humidity, ground_temperature, ground_humidity, time = dh.get_all_data()
         
-        temperature = []
-        air_humidity = []
-        ground_temperature = []
-        ground_humidity = []
-        
-        # Zufallswerte für Testzwecke
-        for i in range(20):
-            temperature.append(np.random.randint(0, 50))
-            air_humidity.append(np.random.randint(0, 100))
-            ground_temperature.append(np.random.randint(0, 50))
-            ground_humidity.append(np.random.randint(0, 100))
-        
         # Zeit in Datetime Objekte umwandeln
         time = [datetime.datetime.fromtimestamp(ts) for ts in time]
         
