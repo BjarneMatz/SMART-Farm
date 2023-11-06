@@ -14,6 +14,9 @@ from data_handle import write_data
 sensor_data_db = Database("sensor_data")
 logger = Logger("Serial")
 
+PORT = "COM4" # Windows
+#PORT = "/dev/ttyUSB0" # Linux
+
 
 def send_to_db(data: list) -> None:
     # Datenformat: 
@@ -35,10 +38,10 @@ def main() -> None:
     logger.log("Starte serielle Schnittstelle")
     # Serielle Schnittstelle öffnen
 
-    ser = serial.Serial(port="COM4", baudrate=9600, timeout=1)
+    ser = serial.Serial(port=PORT, baudrate=9600, timeout=1)
     ser.flush()
     
-    # Daten empfangen und bei Empfang an weitergeben
+    # Daten empfangen und bei Empfang an datahandle weitergeben
     while True:
         if ser.in_waiting > 0:
             line = ser.readline().decode('utf-8').rstrip()
