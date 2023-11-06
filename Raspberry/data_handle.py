@@ -18,7 +18,7 @@ def get_latest_data() -> dict:
         }
         return data
 
-def get_all_data() -> dict:
+def get_all_data() -> tuple:
     keys = db.get_keys()
     
     timestamps = []
@@ -31,7 +31,7 @@ def get_all_data() -> dict:
         air_temperatures.append(db.get_value(key)["air_temperature"])
         air_humidities.append(db.get_value(key)["air_humidity"])
         ground_temperatures.append(db.get_value(key)["ground_temperature"])
-        ground_humidities.append(db.get_value(key)["ground_humidity"])
+        ground_humidities.append(map_range(float(db.get_value(key)["ground_humidity"]), 0, 1023, 0, 100))
         timestamps.append(db.get_value(key)["timestamp"])
         
     return air_temperatures, air_humidities, ground_temperatures, ground_humidities, timestamps

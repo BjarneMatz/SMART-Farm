@@ -23,11 +23,17 @@ class DiagramHandle:
         # Daten aus der Datenbank holen
         temperature, air_humidity, ground_temperature, ground_humidity, time = dh.get_all_data()
         
-        # Daten in numpy arrays umwandeln
-        temperature = np.array(temperature)
-        air_humidity = np.array(air_humidity)
-        ground_humidity = np.array(ground_humidity)
-        time = np.array(time)
+        temperature = []
+        air_humidity = []
+        ground_temperature = []
+        ground_humidity = []
+        
+        # Zufallswerte für Testzwecke
+        for i in range(20):
+            temperature.append(np.random.randint(0, 50))
+            air_humidity.append(np.random.randint(0, 100))
+            ground_temperature.append(np.random.randint(0, 50))
+            ground_humidity.append(np.random.randint(0, 100))
         
         # Zeit in Datetime Objekte umwandeln
         time = [datetime.datetime.fromtimestamp(ts) for ts in time]
@@ -35,17 +41,24 @@ class DiagramHandle:
         # Plot erstellen
         fig, ax = plt.subplots(3, 1, sharex=True)
         fig.tight_layout(pad=3)
+        plt.autoscale(enable=True, axis="x", tight=True)
         
         # Temperatur Plot
         ax[0].plot(time, temperature, color="red")
         ax[0].set_title("Lufttemperatur [°C]")
+        ax[0].set_ylim([0, 50])
+        ax[0].grid(True)        
         
         # Luftfeuchtigkeit Plot
         ax[1].plot(time, air_humidity, color="blue")
         ax[1].set_title("Luftfeuchtigkeit [%]")
+        ax[1].set_ylim([0, 100])
+        ax[1].grid(True)
         
         ax[2].plot(time, ground_humidity, color="green")
         ax[2].set_title("Bodenfeuchtigkeit [%]")
+        ax[2].set_ylim([0, 100])
+        ax[1].grid(True)
         
         
         # X-Achse formatieren
@@ -58,6 +71,9 @@ class DiagramHandle:
         
         # Diagramm schließen
         plt.close(fig)
+        
+        # Diagramm anzeigen (debugging)
+        #plt.show()
         
         logger.log("Diagramm erstellt")
         
