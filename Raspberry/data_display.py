@@ -18,7 +18,7 @@ class DataDisplay:
         self.root = tk.Tk()
         self.root.title("Datenanzeige")
         self.root.geometry("800x480")
-        #self.root.attributes("-fullscreen", True)
+        self.root.attributes("-fullscreen", True)
         
         # Schriftart und -größe für alle Widgets
         self.style = ttk.Style()
@@ -46,6 +46,8 @@ class DataDisplay:
         self.copyrigth_label = ttk.Label(self.root, text="© 2023 Donnjer Development / Bjarne Matz", font=("Arial", 8))
         self.copyrigth_label.pack(side="bottom", anchor="center")
         
+        # Taste 'q' zum Beenden des Programms
+        self.root.bind("q", lambda e: self.root.destroy())
         
         # Temperatur
         self.air_temp_label = ttk.Label(self.temp_frame, text="Lufttemperatur: ")
