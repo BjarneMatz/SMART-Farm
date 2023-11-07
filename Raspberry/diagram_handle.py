@@ -41,27 +41,31 @@ class DiagramHandle:
         
         
         # Diagramm erstellen mit geteilter y-Achse
-        fig, (ax1, ax2) = plt.subplots(2, 1, sharex=False, figsize=(8, 6))
+        fig, (ax1, ax2) = plt.subplots(2, 1)
         
         # Tight Layout aktivieren
         plt.tight_layout(pad=3.0)
 
         # Erste Linie plotten (rote Linie) im oberen Subplot
         ax1.plot(time, air_temp, color='blue', label='Lufttemperatur')
-        ax1.plot(time, ground_temp, color='blue', label='Bodentemperatur')  
+        ax1_2 = ax1.twinx()
+        ax1_2.plot(time, ground_temp, color='red', label='Bodentemperatur')  
         ax1.set_xlabel('Zeit')
         ax1.legend()
         ax1.set_title('Temperatur')
 
+        
+
         # Zweite Linie plotten (blaue Linie) im unteren Subplot
         ax2.plot(time, air_hum, color='blue', label='Luftfeuchtigkeit')
-        ax2.plot(time, ground_hum, color='blue', label='Bodenfeuchtigkeit')
+        ax2_2 = ax2.twinx()
+        ax2_2.plot(time, ground_hum, color='red', label='Bodenfeuchtigkeit')
         ax2.set_xlabel('Zeit')
         ax2.legend()
         ax2.set_title('Feuchtigkeit')
 
         # Diagramm anzeigen (debug)
-        #plt.show()
+        plt.show()
         
         # Diagramm speichern
         fig.savefig(os.path.join(PATH, "Raspberry", "diagram.png"))
