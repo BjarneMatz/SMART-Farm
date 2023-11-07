@@ -14,56 +14,55 @@ PATH = os.getcwd()
 
 logger = Logger("Diagram Handle")
 
+
+def get_x_minutes_ago(x: int) -> int:
+    """Funktion zum Abrufen des UNIX-Timestamps für die angegebene Zeitspanne."""
+    now = time.time()
+    x_minutes_ago = now - (x * 60)
+    return x_minutes_ago
+
+
+
 class DiagramHandle:
     def __init__(self) -> None:
-        logger.log("Starte Diagramm Erstellung")
+        logger.log("Starte Diagrammerstellung...")
         self.create_diagram()
+
+    def create_diagram(self):
+        # Daten abrufen
+        data = dh.get_timed_data(get_x_minutes_ago(10))
         
-    def create_diagram(self) -> None:
-        # Daten aus der Datenbank holen
-        temperature, air_humidity, ground_temperature, ground_humidity, time = dh.get_all_data()
-        
-        # Zeit in Datetime Objekte umwandeln
-        time = [datetime.datetime.fromtimestamp(ts) for ts in time]
-        
-        # Plot erstellen
-        fig, ax = plt.subplots(3, 1, sharex=True)
-        fig.tight_layout(pad=3)
-        plt.autoscale(enable=True, axis="x", tight=True)
-        
-        # Temperatur Plot
-        ax[0].plot(time, temperature, color="red")
-        ax[0].set_title("Lufttemperatur [°C]")
-        ax[0].set_ylim([0, 50])
-        ax[0].grid(True)        
-        
-        # Luftfeuchtigkeit Plot
-        ax[1].plot(time, air_humidity, color="blue")
-        ax[1].set_title("Luftfeuchtigkeit [%]")
-        ax[1].set_ylim([0, 100])
-        ax[1].grid(True)
-        
-        ax[2].plot(time, ground_humidity, color="green")
-        ax[2].set_title("Bodenfeuchtigkeit [%]")
-        ax[2].set_ylim([0, 100])
-        ax[1].grid(True)
+        air_temp = data["air_temperatures"]
+        air_hum = data["air_humidities"]
+        ground_temp = data["ground_temperatures"]
+        ground_hum = data["ground_humidities"]
+        time = data["timestamps"]
         
         
-        # X-Achse formatieren
-        ax[1].xaxis.set_major_formatter(mdates.DateFormatter("%D:%H:%M"))
-        ax[1].xaxis.set_major_locator(mticker.MaxNLocator(10))
-        fig.autofmt_xdate()
         
-        # Diagramm speichern
-        fig.savefig(os.path.join(PATH, "Raspberry", "diagram.png"))
+        # Diagramm erstellen mit geteilter y-Achse
+        fig, (ax1, ax2) = plt.subplots(2, 1, sharex=False, figsize=(8, 6))
         
-        # Diagramm schließen
-        plt.close(fig)
-        
-        # Diagramm anzeigen (debugging)
-        #plt.show()
-        
-        logger.log("Diagramm erstellt")
-        
+        # Tight Layout aktivieren
+        plt.tight_layout(pad=3.0)
+
+        # Erste Linie plotten (rote Linie) im oberen Subplot
+        ax1.plot(time, air_temp, color='blue', label='Lufttemperatur')
+        ax1.plot(time, ground_temp, color='blue', label='Bodentemperatur')  
+        ax1.set_xlabel('Zeit')
+        ax1.legend()
+        ax1.set_title('Temperatur')
+
+        # Zweite Linie plotten (blaue Linie) im unteren Subplot
+        ax2.plot(time, air_hum, color='blue', label='Luftfeuchtigkeit')
+        ax2.plot(time, ground_hum, color='blue', label='Bodenfeuchtigkeit')
+        ax2.set_xlabel('Zeit')
+        ax2.legend()
+        ax2.set_title('Feuchtigkeit')
+
+        # Diagramm anzeigen
+        plt.show()
+
+
 if __name__ == "__main__":
     DiagramHandle()

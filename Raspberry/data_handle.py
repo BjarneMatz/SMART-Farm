@@ -1,5 +1,5 @@
 from database.database import Database
-from time import time
+import time
 import diagram_handle
 db = Database("sensor_data")
 
@@ -18,7 +18,9 @@ def get_latest_data() -> dict:
         }
         return data
 
-def get_all_data() -> tuple:
+def get_timed_data(start:int) -> dict:
+    """Funktion zum Abrufen von Daten aus der Datenbank, die nach einem bestimmten Zeitpunkt aufgenommen wurden."""
+    now = time.time()
     keys = db.get_keys()
     
     timestamps = []
@@ -28,13 +30,30 @@ def get_all_data() -> tuple:
     ground_humidities = []
     
     for key in keys:
-        air_temperatures.append(db.get_value(key)["air_temperature"])
-        air_humidities.append(db.get_value(key)["air_humidity"])
-        ground_temperatures.append(db.get_value(key)["ground_temperature"])
-        ground_humidities.append(map_range(float(db.get_value(key)["ground_humidity"]), 0, 1023, 0, 100))
-        timestamps.append(db.get_value(key)["timestamp"])
-        
-    return air_temperatures, air_humidities, ground_temperatures, ground_humidities, timestamps
+        if float(key) >= start and float(key) <= now:
+            data = dict(db.get_value(key))
+            timestamps.append(convert_timestamp(data["timestamp"]))
+            air_temperatures.append(data["air_temperature"])
+            air_humidities.append(data["air_humidity"])
+            ground_temperatures.append(data["ground_temperature"])
+            ground_humidities.append(map_range(data["ground_humidity"], 0, 1023, 0, 100))
+            
+    data = {
+        "timestamps": timestamps,
+        "air_temperatures": air_temperatures,
+        "air_humidities": air_humidities,
+        "ground_temperatures": ground_temperatures,
+        "ground_humidities": ground_humidities
+    }
+    
+    return data
+    
+def convert_timestamp(timestamp: int) -> str:
+    """Konvertiert den UNIX-Timestamp in eine Stunden- und Minutenangabe."""
+    timestamp = int(timestamp)
+    timestamp = time.localtime(timestamp)
+    timestamp = time.strftime("%H:%M", timestamp)
+    return timestamp
 
 def get_latest_entry_key():
     data = dict(db.get_raw())
