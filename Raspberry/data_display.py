@@ -33,7 +33,10 @@ class DataDisplay:
         self.root.mainloop()
         
     def create_widgets(self):        
-        self.data_frame = ttk.Frame(self.root)
+        self.mainframe = ttk.Frame(self.root)
+        self.mainframe.pack(expand=True, fill="both")
+        
+        self.data_frame = ttk.Frame(self.mainframe)
         self.data_frame.pack(expand=True, anchor="center")
         
         self.temp_frame = ttk.Frame(self.data_frame)
@@ -43,7 +46,7 @@ class DataDisplay:
         self.hum_frame.grid(row=1, column=0, sticky="NSEW", padx=20, pady=20)
         
         #Label am unteren Rand in der Mitte
-        self.copyrigth_label = ttk.Label(self.root, text="© 2023 Donnjer Development / Bjarne Matz", font=("Arial", 8))
+        self.copyrigth_label = ttk.Label(self.mainframe, text="© 2023 Donnjer Development / Bjarne Matz", font=("Arial", 8))
         self.copyrigth_label.pack(side="bottom", anchor="center")
         
         # Taste 'q' zum Beenden des Programms
