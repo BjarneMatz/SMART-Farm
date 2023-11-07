@@ -87,5 +87,8 @@ class DataDisplay:
         
         self.root.after(1000, self.update_data)
         
+def process_worker():
+    DataDisplay()        
+
 if __name__ == "__main__":
     DataDisplay()
