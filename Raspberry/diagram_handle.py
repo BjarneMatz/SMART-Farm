@@ -46,7 +46,7 @@ class DiagramHandle:
         # Tight Layout aktivieren
         plt.tight_layout(pad=3.0)
 
-        # Erste Linie plotten (rote Linie) im oberen Subplot
+        # Temperatur plotten
         ax1.plot(time, air_temp, color='blue', label='Lufttemperatur')
         ax1_2 = ax1.twinx()
         ax1_2.plot(time, ground_temp, color='red', label='Bodentemperatur')  
@@ -54,18 +54,25 @@ class DiagramHandle:
         ax1.legend()
         ax1.set_title('Temperatur')
 
+        # Abstand zwischen den Labels der y-Achse anpassen
+        ax1.yaxis.set_major_locator(mticker.MaxNLocator(8))
+        ax1_2.yaxis.set_major_locator(mticker.MaxNLocator(8))
         
 
-        # Zweite Linie plotten (blaue Linie) im unteren Subplot
+        # Feuchtigkeit plotten
         ax2.plot(time, air_hum, color='blue', label='Luftfeuchtigkeit')
         ax2_2 = ax2.twinx()
         ax2_2.plot(time, ground_hum, color='red', label='Bodenfeuchtigkeit')
         ax2.set_xlabel('Zeit')
         ax2.legend()
         ax2.set_title('Feuchtigkeit')
+        
+        # Abstand zwischen den Labels der y-Achse anpassen
+        ax2.yaxis.set_major_locator(mticker.MaxNLocator(8))
+        ax2_2.yaxis.set_major_locator(mticker.MaxNLocator(8))
 
         # Diagramm anzeigen (debug)
-        plt.show()
+        #plt.show()
         
         # Diagramm speichern
         fig.savefig(os.path.join(PATH, "Raspberry", "diagram.png"))
