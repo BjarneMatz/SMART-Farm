@@ -22,9 +22,10 @@ class DataDisplay:
         
         # Schriftart und -größe für alle Widgets
         self.style = ttk.Style()
-        self.style.configure(".", font=("Arial", 30))
+        
         # Clam Style festlegen
         self.style.theme_use("clam")
+        self.style.configure(".", font=("Arial", 30))
         
         
         self.create_widgets()
