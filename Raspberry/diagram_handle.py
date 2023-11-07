@@ -3,6 +3,7 @@
 # Externe Module
 import os
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 import numpy as np
 import datetime
 import time
