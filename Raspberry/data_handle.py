@@ -25,7 +25,7 @@ def get_latest_data() -> dict:
 
 def get_timed_data(start:int) -> dict:
     """Funktion zum Abrufen von Daten aus der Datenbank, die nach einem bestimmten Zeitpunkt aufgenommen wurden."""
-    now = time.time_ns()
+    now = time.time()
     
     timestamps = []
     air_temperatures = []
@@ -74,7 +74,7 @@ def map_range(x, in_min, in_max, out_min, out_max):
 
 def write_data(data: list) -> None:
     # Datenformat: "Luftfeuchtigkeit,Lufttemperatur,Bodentemperatur,Bodenfeuchtigkeit"   
-    timestamp = time.time_ns()
+    timestamp = time.time()
     
     db_data = {
         "air_humidity": data[0],
