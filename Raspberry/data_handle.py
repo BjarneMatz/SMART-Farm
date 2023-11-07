@@ -13,6 +13,7 @@ def get_latest_data() -> dict:
     try:
         key = db.get_keys()[-1]
         data = dict(db.get_value(key))
+        data["ground_humidity"] = map_range(data["ground_humidity"], 0, 1023, 0, 100)
     except:
         data = {
             "air_humidity": 0,
