@@ -128,8 +128,9 @@ class DataDisplay:
             self.air_humidity_data_label.config(text=str(data["air_humidity"]) + "%")
             self.ground_temperature_data_label.config(text=str(data["ground_temperature"]) + "°C")
             self.ground_humidity_data_label.config(text=str(data["ground_humidity"]) + "%")
-        except:
+        except Exception as e:
             logger.log("Fehler beim aktualisieren der Daten", 2)
+            logger.log(str(e), 2, "file")
         
         self.root.after(5000, self.update_data)
         
