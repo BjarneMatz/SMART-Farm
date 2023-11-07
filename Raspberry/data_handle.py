@@ -66,15 +66,13 @@ def map_range(x, in_min, in_max, out_min, out_max):
 
 def write_data(data: list) -> None:
     # Datenformat: "Luftfeuchtigkeit,Lufttemperatur,Bodentemperatur,Bodenfeuchtigkeit"   
-    timestamp = time()
-    humidity = data[3]
-    humidity = map_range(float(humidity), 0, 1023, 0, 100)
+    timestamp = time.time()
     
     db_data = {
         "air_humidity": data[0],
         "air_temperature": data[1],
         "ground_temperature": data[2],
-        "ground_humidity": humidity,
+        "ground_humidity": data[3],
         "timestamp": timestamp
     }
     
