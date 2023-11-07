@@ -62,7 +62,7 @@ def get_latest_entry_key():
     return latest_entry
 
 def map_range(x, in_min, in_max, out_min, out_max):
-  return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
+  return (float(x) - float(in_min)) * (float(out_max) - float(out_min)) // (float(in_max) - float(in_min)) + float(out_min)
 
 def write_data(data: list) -> None:
     # Datenformat: "Luftfeuchtigkeit,Lufttemperatur,Bodentemperatur,Bodenfeuchtigkeit"   
