@@ -23,6 +23,9 @@ class DataDisplay:
         # Schriftart und -größe für alle Widgets
         self.style = ttk.Style()
         self.style.configure(".", font=("Arial", 30))
+        # Clam Style festlegen
+        self.style.theme_use("clam")
+        
         
         self.create_widgets()
         self.update_data()
@@ -44,12 +47,12 @@ class DataDisplay:
         
         
         # Temperatur
-        self.air_temp_label = ttk.Label(self.temp_frame, text="Lufttemperatur:")
+        self.air_temp_label = ttk.Label(self.temp_frame, text="Lufttemperatur: ")
         self.air_temp_label.grid(row=0, column=1, sticky="W")
         self.air_temp_value_label = ttk.Label(self.temp_frame, text="0°C")
         self.air_temp_value_label.grid(row=0, column=2, sticky="W")
         
-        self.ground_temp_label = ttk.Label(self.temp_frame, text="Bodentemperatur:")
+        self.ground_temp_label = ttk.Label(self.temp_frame, text="Bodentemperatur: ")
         self.ground_temp_label.grid(row=1, column=1, sticky="W")
         self.ground_temp_value_label = ttk.Label(self.temp_frame, text="0°C")
         self.ground_temp_value_label.grid(row=1, column=2, sticky="W")
@@ -61,12 +64,12 @@ class DataDisplay:
         
         
         # Feuchtigkeit
-        self.air_hum_label = ttk.Label(self.hum_frame, text="Luftfeuchtigkeit:")
+        self.air_hum_label = ttk.Label(self.hum_frame, text="Luftfeuchtigkeit: ")
         self.air_hum_label.grid(row=0, column=1, sticky="W")
         self.air_hum_value_label = ttk.Label(self.hum_frame, text="0%")
         self.air_hum_value_label.grid(row=0, column=2, sticky="W")
         
-        self.ground_hum_label = ttk.Label(self.hum_frame, text="Bodenfeuchtigkeit:")
+        self.ground_hum_label = ttk.Label(self.hum_frame, text="Bodenfeuchtigkeit: ")
         self.ground_hum_label.grid(row=1, column=1, sticky="W")
         self.ground_hum_value_label = ttk.Label(self.hum_frame, text="0%")
         self.ground_hum_value_label.grid(row=1, column=2, sticky="W")
