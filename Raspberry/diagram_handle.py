@@ -60,8 +60,11 @@ class DiagramHandle:
         ax2.legend()
         ax2.set_title('Feuchtigkeit')
 
-        # Diagramm anzeigen
-        plt.show()
+        # Diagramm anzeigen (debug)
+        #plt.show()
+        
+        # Diagramm speichern
+        fig.savefig(os.path.join(PATH, "Raspberry", "diagram.png"))
 
 
 if __name__ == "__main__":
