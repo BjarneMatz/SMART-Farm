@@ -1,27 +1,26 @@
 # Modul um die Histogramme zu erstellen
 
-import data_handle as dh
+# Externe Module
 import os
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.ticker as mticker
 import numpy as np
 import datetime
 import time
+
+# Eigene Module
 from logger.logger import Logger
 
+# Projektmodule
+import data_handle as dh
+
 PATH = os.getcwd()
-
 logger = Logger("Diagram Handle")
-
 
 def get_x_minutes_ago(x: int) -> int:
     """Funktion zum Abrufen des UNIX-Timestamps für die angegebene Zeitspanne."""
     now = time.time()
     x_minutes_ago = now - (x * 60)
     return x_minutes_ago
-
-
 
 class DiagramHandle:
     def __init__(self) -> None:
@@ -38,8 +37,6 @@ class DiagramHandle:
         ground_hum = data["ground_humidities"]
         time = data["timestamps"]
         
-        
-        
         # Diagramm erstellen mit geteilter y-Achse
         fig, (ax1, ax2) = plt.subplots(2, 1)
         
@@ -52,6 +49,7 @@ class DiagramHandle:
         ax1_2.plot(time, ground_temp, color='red', label='Bodentemperatur')  
         ax1.set_xlabel('Zeit')
         ax1.legend()
+        ax1_2.legend()
         ax1.set_title('Temperatur')
 
         # Abstand zwischen den Labels der y-Achse anpassen
@@ -65,6 +63,7 @@ class DiagramHandle:
         ax2_2.plot(time, ground_hum, color='red', label='Bodenfeuchtigkeit')
         ax2.set_xlabel('Zeit')
         ax2.legend()
+        ax2_2.legend()
         ax2.set_title('Feuchtigkeit')
         
         # Abstand zwischen den Labels der y-Achse anpassen

@@ -8,13 +8,11 @@ import multiprocessing
 # Custom Modules
 from logger.logger import Logger
 
-# Multiprocessing
+# Multiprocessing Module
 import receive_serial
 import data_display
 
-
 logger = Logger("Main")
-
 
 def main():
     logger.log("Starte Hauptprogramm")
@@ -41,11 +39,7 @@ def main():
                 process.terminate()
                 process.join()
             exit()
-    
-    
-    
-    
-    
+      
 if __name__ == "__main__":
     main()
     

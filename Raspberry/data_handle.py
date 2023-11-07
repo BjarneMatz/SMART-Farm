@@ -1,13 +1,18 @@
-from database.database import Database
+# Externe Module
 import time
-import diagram_handle
+
+# Eigene Module
+from logger.logger import Logger
+from database.database import Database
+
+logger = Logger("Data Handle")
 db = Database("sensor_data")
 
 def get_latest_data() -> dict:
+    """Holt die aktuellsten Daten aus der Datenbank."""
     try:
-        key = get_latest_entry_key()
+        key = db.get_keys()[-1]
         data = dict(db.get_value(key))
-        return data
     except:
         data = {
             "air_humidity": 0,
@@ -16,12 +21,11 @@ def get_latest_data() -> dict:
             "ground_humidity": 0,
             "timestamp": 0
         }
-        return data
+    return data
 
 def get_timed_data(start:int) -> dict:
     """Funktion zum Abrufen von Daten aus der Datenbank, die nach einem bestimmten Zeitpunkt aufgenommen wurden."""
-    now = time.time()
-    keys = db.get_keys()
+    now = time.time_ns()
     
     timestamps = []
     air_temperatures = []
@@ -29,15 +33,25 @@ def get_timed_data(start:int) -> dict:
     ground_temperatures = []
     ground_humidities = []
     
+    keys = db.get_keys()
+    
     for key in keys:
         if float(key) >= start and float(key) <= now:
             data = dict(db.get_value(key))
-            timestamps.append(convert_timestamp(data["timestamp"]))
-            air_temperatures.append(data["air_temperature"])
-            air_humidities.append(data["air_humidity"])
-            ground_temperatures.append(data["ground_temperature"])
-            ground_humidities.append(map_range(data["ground_humidity"], 0, 1023, 0, 100))
             
+            ground_hum = map_range(data["ground_humidity"], 0, 1023, 0, 100)
+            air_hum = data["air_humidity"]
+            ground_temp = data["ground_temperature"]
+            air_temp = data["air_temperature"]
+            timestamp = convert_timestamp(data["timestamp"])
+            
+            ground_humidities.append(ground_hum)
+            air_humidities.append(air_hum)
+            ground_temperatures.append(ground_temp)
+            air_temperatures.append(air_temp)
+            timestamps.append(timestamp)       
+            
+    # Ausgabeformat
     data = {
         "timestamps": timestamps,
         "air_temperatures": air_temperatures,
@@ -55,18 +69,12 @@ def convert_timestamp(timestamp: int) -> str:
     timestamp = time.strftime("%H:%M", timestamp)
     return timestamp
 
-def get_latest_entry_key():
-    data = dict(db.get_raw())
-    latest_entry = data.keys()
-    latest_entry = list(latest_entry)[-1]
-    return latest_entry
-
 def map_range(x, in_min, in_max, out_min, out_max):
   return (float(x) - float(in_min)) * (float(out_max) - float(out_min)) // (float(in_max) - float(in_min)) + float(out_min)
 
 def write_data(data: list) -> None:
     # Datenformat: "Luftfeuchtigkeit,Lufttemperatur,Bodentemperatur,Bodenfeuchtigkeit"   
-    timestamp = time.time()
+    timestamp = time.time_ns()
     
     db_data = {
         "air_humidity": data[0],
@@ -75,8 +83,7 @@ def write_data(data: list) -> None:
         "ground_humidity": data[3],
         "timestamp": timestamp
     }
-    
-    db.set_value(timestamp, db_data)
-    
-def build_diagram() -> None:
-    diagram_handle.DiagramHandle()
+    try:
+        db.set_value(timestamp, db_data)
+    except:
+        logger.log("Fehler beim Schreiben der Daten in die Datenbank!", 2)

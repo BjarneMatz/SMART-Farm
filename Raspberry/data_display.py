@@ -3,15 +3,18 @@
 # Imports
 import tkinter as tk
 from tkinter import ttk
-
-# Custom Modules
-from logger.logger import Logger
-import data_handle as dh
 import os
 from PIL import Image, ImageTk
 
-PATH = os.getcwd()
+# Eigene Module
+from logger.logger import Logger
 
+# Projektmodule
+import data_handle as dh
+import diagram_handle
+
+
+PATH = os.getcwd()
 logger = Logger("Data Display")
 
 class DataDisplay:
@@ -25,8 +28,6 @@ class DataDisplay:
         # Schriftart und -größe für alle Widgets
         self.style = ttk.Style()
         self.style.configure(".", font=("Arial", 12))
-        
-        # Style für die Labels
         
         self.create_widgets()
         self.update_data()
@@ -54,7 +55,6 @@ class DataDisplay:
         # Bild anzeigen
         self.diagram_image_label = ttk.Label(self.diagram_frame, image=self.diagram_image)
         self.diagram_image_label.grid(row=0, column=0, sticky="NSEW")
-        
         
         
     def create_current_data_frame(self) -> None:        
@@ -104,12 +104,13 @@ class DataDisplay:
         
         self.ground_humidity_data_label = ttk.Label(self.humidity_frame, text="0%")
         self.ground_humidity_data_label.grid(row=1, column=2, sticky="W")
+    
     def update_data(self) -> None:
         logger.log("Aktualisiere Daten")
         data = dict(dh.get_latest_data())
         try:
             # Diagramm neu erstellen
-            diagram = dh.build_diagram()
+            diagram_handle.DiagramHandle()
             
             # Bild laden und anpassen
             diagram_image = Image.open(os.path.join(PATH, "Raspberry", "diagram.png"))
